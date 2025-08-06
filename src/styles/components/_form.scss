@@ -1,0 +1,63 @@
+@use "../utils/variables" as *;
+
+.form__container {
+    .form__input-group {
+        margin-bottom: 0.5rem;
+        .form__label {
+            display: block;
+            &[required] {
+                &::after {
+                    content: " (*)";
+                    color: $danger-color;
+                }
+            }
+        }
+        .form__input {
+            border: 2px solid $secondary-color;
+            border-radius: 1rem;
+            display: block;
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            width: calc(100% - 1.25rem);
+            transition: .8s;
+            &[type="checkbox"] {
+                display: flex;
+                width: 2rem;
+                margin-top: 0;
+            }
+            &[type="number"]::-webkit-inner-spin-button,
+            [type="number"]::-webkit-outer-spin-button{
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            &.with-error {
+                border-color: $danger-color;
+                &:focus-visible {
+                    outline-color: $danger-color;
+                }
+            }
+            &:focus-visible {
+                outline-color: $light-secondary-color;
+            }
+        };
+        .form__error {
+            color: $danger-color;
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+        }
+    }
+    .form__submit {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+        width: 100%;
+    }
+    .form__reset{
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+        width: 100%;
+    }
+}    

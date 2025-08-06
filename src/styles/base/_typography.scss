@@ -1,0 +1,44 @@
+@use "../utils/variables" as *;
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+    font-family: "fredoka", sans-serif;
+}
+
+a {
+    color: unset;
+    text-decoration: none;
+}
+
+h1{
+    margin: 0;
+    font-size: 3rem;
+    color: $secondary-color ;
+    span{
+        color: $tertiary-color;
+    }
+}
+
+h2{
+    margin-top: 80px;
+    font-size: 2rem;
+    color: $secondary-color;
+}
+
+h3 {
+    margin: 0;
+}
+
+h4{
+    color: $white-color;
+    font-size: 2rem;
+    span{
+        color: $tertiary-color;
+    }
+}
+
+h5{
+    color: $black-color;
+    font-size: 1rem;
+}
+

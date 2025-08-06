@@ -1,0 +1,76 @@
+@use "sass:map";
+@use "../utils/variables" as *;
+
+.navbar__container {
+    align-items: center;
+    background-color: $primary-color;
+    display: flex;
+    min-height: 4.5rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    .logo{
+        width: 7.5rem;
+        margin-left: -45px;
+    }
+    .navbar__navigation {
+        margin-top: 2.7rem;
+        ul {
+            display: flex;
+            gap: 1rem;
+            li {
+                list-style: none;
+                a {
+                    text-decoration: none;
+                    color: $secondary-color;
+                    transition: 0.2s;
+                    &:hover {
+                        color: $light-secondary-color;
+                    };
+                }
+            }
+        }
+        @media screen and (max-width: map.get($grid-breakpoints, md)) {
+            display: none;
+        }
+    }
+    .navbar__menu-mobile {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        @media screen and (min-width: map.get($grid-breakpoints, md)) {
+            display: none;
+        }
+        .navbar__menu-button {
+            border: 2px solid $primary-color;
+            background-color: transparent;
+            color: $secondary-color; 
+            padding: 0.5rem;
+            transition: .2s;
+            &:hover {
+                cursor: pointer;
+                color: $light-secondary-color
+            }
+        }
+
+    }
+}
+.navbar__drawer-menu{
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        li {
+            list-style: none;
+            a {
+                text-decoration: none;
+                color: $white-color;
+                transition: 2s;
+                &:hover {
+                    color: $primary-color;
+                };
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+@use "../utils/variables" as *;
+
+body {
+    margin: 0;
+    padding-top: 4.5rem;
+    position: relative;
+}
+
+main {
+    min-height: calc(100vh - (4.5rem + 2rem + 64px));
+}
+
+img{
+    width: 100px;
+}

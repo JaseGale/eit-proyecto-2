@@ -1,0 +1,27 @@
+@use "../utils/variables" as *;
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    border: 2px solid $secondary-color;
+    min-height: 400px;
+    height: 100%;
+    width: 100%;
+    img {
+        margin: 9px;
+        width: 70%;
+        align-self: center;
+    }
+    .card__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        .card__price {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+        }
+    }
+}

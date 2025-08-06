@@ -1,0 +1,11 @@
+@use "../utils/variables" as *;
+
+.store-image{
+    width: 800px;
+    border-radius: 1rem;   
+}
+
+.history{
+    color: $secondary-color;
+    font-size: 1.3em;
+}

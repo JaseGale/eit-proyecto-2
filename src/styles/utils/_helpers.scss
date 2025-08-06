@@ -1,0 +1,46 @@
+@use "variables" as *;
+
+@each $key, $prop in $spacings {
+    @for $i from 0 through 12 {
+        .#{$key}-#{$i} {
+            #{$prop}: $i * 0.25rem;
+        }
+    }
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+
+.d-flex-row-reverse{
+    flex-direction: row-reverse;
+}
+
+.d-flex-direction-column{
+    flex-direction: column;
+}
+
+.text-align-center{
+    text-align: center;
+}

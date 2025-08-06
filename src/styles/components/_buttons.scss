@@ -1,0 +1,64 @@
+@use "../utils/variables" as *;
+
+
+.btn {
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    &__primary {
+        color: $white-color;
+        border: 2px solid $secondary-color;
+        background-color: $secondary-color;
+        transition: 0.2s;
+        svg {
+            width: 1rem;
+            fill: $secondary-color;
+        } 
+        &:hover {
+            border: 2px solid $light-secondary-color;
+            background-color: $light-secondary-color;
+            cursor: pointer;
+        }
+        &-outline {
+            background-color: transparent;
+            color: $primary-color;
+            border: 2px solid $primary-color;
+            svg {
+                width: 1rem;
+                fill: $primary-color;
+            } 
+            &:hover {
+                color: $primary-color;
+                border-color: $secondary-color;
+            }
+        }
+    };
+    &__secondary {
+        background-color: $grey-color;
+        color: $white-color;
+        border: 2px solid $grey-color;
+        transition: 0.2s;
+        svg {
+            width: 1rem;
+            fill: $white-color;
+        } 
+        &:hover {
+            background-color: $light-grey-color;
+            border: 2px solid $light-grey-color;
+            cursor: pointer;
+        }
+        &-outline {
+            background-color: transparent;
+            color: $secondary-color;
+            border: 2px solid $secondary-color;
+            svg {
+                width: 1rem;
+                fill: $secondary-color;
+            } 
+            &:hover {
+                color: $secondary-color;
+                border-color: $light-grey-color;
+            }
+        }
+    };
+}

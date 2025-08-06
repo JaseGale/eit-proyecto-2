@@ -1,0 +1,31 @@
+@use "../utils/variables" as *;
+
+.cart__container {
+    position: relative;
+    color: $secondary-color;
+    transition: 0.2s;
+    &:hover{
+        cursor: pointer;
+        color: $light-secondary-color;
+    }
+    .cart__badge {
+        border-radius: 100%;
+        background-color: $danger-color;
+        color: $white-color;
+        position: absolute;
+        top: -0.5rem;
+        right: -0.5rem;
+        height: 1.25rem;
+        width: 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.cart__list {
+    max-height: 300px;
+    overflow-y: auto;          
+    margin-block: 1rem;        
+    padding-inline-end: 0.5rem;
+}
