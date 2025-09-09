@@ -23,7 +23,9 @@ function Form({
                                 : ""
                         }`}
                     >
-                        <Text as='label' className="form__label" htmlFor={name}>{label}</Text>
+                        <Text as='label' className="form__label" htmlFor={name}>
+                            {label}
+                        </Text>
 
                         {type === "textarea" ? (
                             <textarea
@@ -34,6 +36,25 @@ function Form({
                                 className={`form__input${errors[name] ? " with-error" : ""}`}
                                 rows={5}
                             />
+                        ) : type === "file" ? (
+                            <>
+                                <input
+                                    id={name}
+                                    name={name}
+                                    type="file"
+                                    onChange={(e) => {
+                                        onChange({
+                                            target: { name, value: e.target.files[0] }
+                                        })
+                                    }}
+                                    className={`form__input${errors[name] ? " with-error" : ""}`}
+                                />
+                                {values[name] && (
+                                    <Text as="span" className="form__filename">
+                                        {values[name].name}
+                                    </Text>
+                                )}
+                            </>
                         ) : (
                             <input
                                 id={name}
@@ -42,26 +63,25 @@ function Form({
                                 value={values[name]}
                                 onChange={onChange}
                                 onKeyDown={(e) => {
-                                    if 
-                                    (
+                                    if (
                                         (type === "number" || type === "tel") &&
                                         ["e", "E", "+", "-"].includes(e.key)
                                     ) {
-                                        e.preventDefault();
+                                        e.preventDefault()
                                     }
                                 }}
                                 onPaste={(e) => {
                                     if (type === "number" || type === "tel") {
-                                        const pasted = e.clipboardData.getData("Text");
-                                    if (/[^\d]/.test(pasted)) {
-                                        e.preventDefault(); 
-                                    }
+                                        const pasted = e.clipboardData.getData("Text")
+                                        if (/[^\d]/.test(pasted)) {
+                                            e.preventDefault()
+                                        }
                                     }
                                 }}
-                            className={`form__input${errors[name] ? " with-error" : ""}`}
+                                className={`form__input${errors[name] ? " with-error" : ""}`}
                             />
                         )}
-                        
+
                         {errors[name] && (
                             <Text as="span" className="form__error">
                                 {errors[name]}

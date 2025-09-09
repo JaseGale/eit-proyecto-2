@@ -3,7 +3,7 @@ import Counter from "./Counter"
 import Text from "./Text"
 
 function Card({
-    image, 
+    img, 
     name,
     shortDescription,
     amount,
@@ -11,7 +11,7 @@ function Card({
   }) {
   return (
     <Box className= 'card'>
-        <img src={image} alt={name} className="m-3"/>
+        <img src={img} alt={name} className="m-3"/>
         <Box className='card__content m-4'>
           <Box>
               <Text as= 'h3'>{name}</Text>
@@ -21,7 +21,7 @@ function Card({
             <Box className="d-flex justify-center w-100">
               <Counter
                   product = {{
-                    image, 
+                    img, 
                     name,
                     shortDescription,
                     amount,

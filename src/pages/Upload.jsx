@@ -35,10 +35,18 @@ const validationsUpload = {
       validation: value => value > 0 && value <= 100,
       errorText: "La edad hasta debe ser mayor a cero y menor a 100."
     },
-    image: {
+    // Validación para imagenes externas. URL.
+    /*img: {
       validation: value => /^https:\/\/.+\..+/.test(value),
       errorText: `La URL de la imágen debe comenzar con "https://". y debe terminar con .jpg o .com` 
-    }
+    }*/
+    img: {
+        validation: file => {
+          if (!file) return false;
+          return file.type.startsWith("image/"); 
+    },
+    errorText: "El archivo debe ser una imagen válida (jpg, png, webp, etc.)"
+  }
 
 }
 
@@ -56,7 +64,7 @@ function Upload() {
     freeDelivery: false,
     ageFrom: 0,
     ageTo: 0,
-    image: ""
+    img: ""
   }, validationsUpload)
 
     const handleSubmit = e => {
@@ -132,11 +140,17 @@ function Upload() {
                           type: "number",
                           label: "Edad hasta"
                         },
+                        /* Subir una imágen de manera externa
                         {
-                          name: "image",
+                          name: "img",
                           type: "text",
                           label: "URL Imagen"
-                        },
+                        },*/
+                        {
+                          name: "img",
+                          type: "file",
+                          label: "Imagen"
+                        }
                         ]}
                     />
                   </Box>
